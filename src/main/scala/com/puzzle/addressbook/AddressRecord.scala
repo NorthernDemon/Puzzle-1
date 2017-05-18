@@ -13,20 +13,17 @@ object AddressRecord {
   private val dateTimeFormat = DateTimeFormat.forPattern("dd/MM/YY")
 
   def fromString(record: String): Option[AddressRecord] = {
-    try {
-      val items = record.replaceAll("\\s+", " ").trim.replace(",", "").split(" ").toSeq
-      Some(
-        AddressRecord(
-          firstName = items(0),
-          lastName = items(1),
-          gender = Gender(items(2)),
-          birthday = dateTimeFormat.parseDateTime(items(3))
+    record.replaceAll("\\s+", " ").trim.replace(",", "").split(" ").toSeq match {
+      case Seq(firstName, lastName, gender, birthday) =>
+        Some(
+          AddressRecord(
+            firstName = firstName,
+            lastName = lastName,
+            gender = Gender(gender),
+            birthday = dateTimeFormat.parseDateTime(birthday)
+          )
         )
-      )
-    } catch {
-      case error: Throwable =>
-        error.printStackTrace()
-        None
+      case _ => None
     }
   }
 }
