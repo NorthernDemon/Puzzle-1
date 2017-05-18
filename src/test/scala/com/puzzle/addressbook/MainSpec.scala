@@ -4,7 +4,11 @@ import org.scalatest._
 
 class MainSpec extends FlatSpec with Matchers {
 
-    "Main method" should "reply with pong" in {
-        Main.ping shouldBe "pong"
-    }
+  "findByGender(Male)" should "list count only male records" in {
+    Main.findByGender(Male) shouldBe 3
+  }
+
+  "findByGender(Female)" should "list count only female records" in {
+    Main.findByGender(Female) shouldBe 2
+  }
 }
