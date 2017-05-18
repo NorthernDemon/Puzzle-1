@@ -14,7 +14,7 @@ object AddressRecord {
 
   def fromString(record: String): Option[AddressRecord] = {
     try {
-      val items = record.replace(",", "").split(" ").map(_.trim).toSeq
+      val items = record.replaceAll("\\s+", " ").trim.replace(",", "").split(" ").toSeq
       Some(
         AddressRecord(
           firstName = items(0),
