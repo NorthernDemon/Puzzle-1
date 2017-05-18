@@ -9,7 +9,7 @@ object Gender {
   def apply(s: String): Gender = s match {
     case "Male" => Male
     case "Female" => Female
-    case _ => throw new IllegalArgumentException(
-      "Could not parse the gender field. Use [ Male | Female ]")
+    case error => throw new IllegalArgumentException(
+      s"Could not parse the gender field from $error. Use [ Male | Female ]")
   }
 }
