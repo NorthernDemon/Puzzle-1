@@ -13,3 +13,10 @@ These questions are:
 Each question is expressed in the from of a unit test.
 
 Run: ```sbt test``` to find out if they are correct.
+
+## Requirements
+
+* Scala 2.12.2
+* sbt 0.13.15
+* [nscala-time](https://github.com/nscala-time/nscala-time)
+* [scalatest](http://www.scalatest.org)
