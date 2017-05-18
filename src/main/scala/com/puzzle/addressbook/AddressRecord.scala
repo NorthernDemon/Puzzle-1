@@ -3,8 +3,6 @@ package com.puzzle.addressbook
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 
-case class AddressBook(records: Seq[AddressRecord])
-
 case class AddressRecord(firstName: String,
                          lastName: String,
                          gender: Gender,
