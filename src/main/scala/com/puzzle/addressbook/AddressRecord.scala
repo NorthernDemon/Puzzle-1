@@ -6,7 +6,7 @@ import org.joda.time.format.DateTimeFormat
 case class AddressRecord(firstName: String,
                          lastName: String,
                          gender: Gender,
-                         birthDay: DateTime)
+                         birthday: DateTime)
 
 object AddressRecord {
 
@@ -20,7 +20,7 @@ object AddressRecord {
           firstName = items(0),
           lastName = items(1),
           gender = Gender(items(2)),
-          birthDay = dateTimeFormat.parseDateTime(items(3))
+          birthday = dateTimeFormat.parseDateTime(items(3))
         )
       )
     } catch {

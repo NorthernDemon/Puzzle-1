@@ -17,8 +17,8 @@ object Main {
 
   def findByAge(age: Age): Option[AddressRecord] = {
     age match {
-      case Oldest => records.minBy(_.map(_.birthDay))
-      case Youngest => records.maxBy(_.map(_.birthDay))
+      case Oldest => records.minBy(_.map(_.birthday))
+      case Youngest => records.maxBy(_.map(_.birthday))
     }
   }
 
@@ -27,7 +27,7 @@ object Main {
       first <- records.find(_.get.firstName == firstName1).flatten
       second <- records.find(_.get.firstName == firstName2).flatten
     } yield {
-      new Interval(first.birthDay, second.birthDay).toDuration.getStandardDays
+      new Interval(first.birthday, second.birthday).toDuration.getStandardDays
     }
   }
 
