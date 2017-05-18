@@ -6,10 +6,10 @@ case object Female extends Gender
 
 object Gender {
 
-  def apply(s: String): Gender = s match {
+  def apply(gender: String): Gender = gender match {
     case "Male" => Male
     case "Female" => Female
-    case error => throw new IllegalArgumentException(
-      s"Could not parse the gender field from $error. Use [ Male | Female ]")
+    case unknown => throw new IllegalArgumentException(
+      s"Could not parse the gender field from $unknown. Use [ Male | Female ]")
   }
 }
