@@ -14,6 +14,20 @@ Each question is expressed in the from of a unit test.
 
 Run: ```sbt test``` to find out if they are correct.
 
+## Datasets
+
+Datasets are located under the resources folder:
+
+* **AddressBook** standard dataset with all records being correct
+* **UnorganizedAddressBook** standard dataset where records are correct, but in unorganized format (extra spaces, multiple commas, etc.)
+* **MalformedGenderAddressBook** dataset contains one record with incorrect gender
+* **MalformedBirthdayAddressBook** dataset contains one record with incorrect birthday format
+* **MalformedNameAddressBook** dataset contains one record without space in between of the first and last names
+
+The records are normalized while parsing.
+
+The records are skipped if they contain malformed data.
+
 ## Requirements
 
 * Scala 2.12.2
