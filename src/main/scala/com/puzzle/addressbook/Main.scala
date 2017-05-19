@@ -22,12 +22,12 @@ object Main {
     }
   }
 
-  def getDaysDifference(firstName1: String, firstName2: String): Option[Long] = {
+  def getDaysDifference(olderName: String, youngerName: String): Option[Long] = {
     for {
-      first <- records.find(_.firstName == firstName1)
-      second <- records.find(_.firstName == firstName2)
+      older <- records.find(_.firstName == olderName)
+      younger <- records.find(_.firstName == youngerName)
     } yield {
-      new Interval(first.birthday, second.birthday).toDuration.getStandardDays
+      new Interval(older.birthday, younger.birthday).toDuration.getStandardDays
     }
   }
 
