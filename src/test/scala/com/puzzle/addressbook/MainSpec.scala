@@ -13,13 +13,11 @@ class MainSpec extends FlatSpec with Matchers {
   }
 
   "findByBirthDay(Oldest)" should "return the oldest person on the list" in {
-    val oldest = AddressRecord.fromString("Wes Jackson, Male, 14/08/74").get
-    Main.findByAge(Oldest) shouldBe oldest
+    Main.findByAge(Oldest) shouldBe AddressRecord.fromString("Wes Jackson, Male, 14/08/74").get
   }
 
   "findByBirthDay(Youngest)" should "return the youngest person on the list" in {
-    val youngest = AddressRecord.fromString("Gemma Lane, Female, 20/11/91").get
-    Main.findByAge(Youngest) shouldBe youngest
+    Main.findByAge(Youngest) shouldBe AddressRecord.fromString("Gemma Lane, Female, 20/11/91").get
   }
 
   "getDaysDifference(firstName1, firstName2)" should "return the number of days between two people's birthdays" in {
