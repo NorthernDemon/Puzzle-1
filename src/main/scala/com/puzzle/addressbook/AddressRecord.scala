@@ -15,14 +15,19 @@ object AddressRecord {
   def fromString(record: String): Option[AddressRecord] = {
     record.replaceAll("\\s+", " ").trim.replace(",", "").split(" ").toSeq match {
       case Seq(firstName, lastName, gender, birthday) =>
-        Some(
-          AddressRecord(
-            firstName = firstName,
-            lastName = lastName,
-            gender = Gender(gender),
-            birthday = dateTimeFormat.parseDateTime(birthday)
+        try {
+          Some(
+            AddressRecord(
+              firstName = firstName,
+              lastName = lastName,
+              gender = Gender(gender),
+              birthday = dateTimeFormat.parseDateTime(birthday)
+            )
           )
-        )
+        } catch {
+          case error: Throwable => error.printStackTrace()
+            None
+        }
       case _ => None
     }
   }
