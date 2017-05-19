@@ -13,12 +13,12 @@ class MainSpec extends FlatSpec with Matchers {
   }
 
   "findByBirthDay(Oldest)" should "return the oldest person on the list" in {
-    val oldest = AddressRecord.fromString("Wes Jackson, Male, 14/08/74")
+    val oldest = AddressRecord.fromString("Wes Jackson, Male, 14/08/74").get
     Main.findByAge(Oldest) shouldBe oldest
   }
 
   "findByBirthDay(Youngest)" should "return the youngest person on the list" in {
-    val youngest = AddressRecord.fromString("Gemma Lane, Female, 20/11/91")
+    val youngest = AddressRecord.fromString("Gemma Lane, Female, 20/11/91").get
     Main.findByAge(Youngest) shouldBe youngest
   }
 
